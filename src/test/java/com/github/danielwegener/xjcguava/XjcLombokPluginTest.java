@@ -10,9 +10,9 @@ import static org.junit.Assert.assertThat;
 import static org.hamcrest.Matchers.*;
 import static org.hamcrest.Matchers.equalTo;
 
-public class XjcGuavaPluginTest {
+public class XjcLombokPluginTest {
 
-    private final XjcGuavaPlugin plugin = new XjcGuavaPlugin();
+    private final XjcLombokPlugin plugin = new XjcLombokPlugin();
     private final JCodeModel aModel = new JCodeModel();
     private final JPackage aPackage;
     private final JDefinedClass aClass;
@@ -25,7 +25,7 @@ public class XjcGuavaPluginTest {
     private final JDefinedClass aSuperClass;
     private final JFieldVar aSuperClassField;
 
-    public XjcGuavaPluginTest() throws Exception {
+    public XjcLombokPluginTest() throws Exception {
         aPackage = aModel._package("test");
         aClass = aPackage._class("AClass");
 
@@ -44,33 +44,13 @@ public class XjcGuavaPluginTest {
         aSuperClassField = aSuperClass.field(JMod.PRIVATE, aModel.DOUBLE, "superClassField");
     }
 
-    @Test
-    public void testGetInstanceFields() {
-        final Collection<JFieldVar> instanceFields =  plugin.getInstanceFields(aClass.fields().values());
-        assertThat(instanceFields, not(hasItem(aStaticField)));
-        assertThat(instanceFields, not(empty()));
-    }
-
-    @Test
-    public void testGetSuperclassFields() {
-        assertThat(plugin.getSuperclassFields(aClass), equalTo(Arrays.asList(aSuperClassField)));
-    }
-
-
-    @Test
-    public void testIsStatic() {
-        assertThat(plugin.isStatic(aStaticField), equalTo(true));
-        assertThat(plugin.isStatic(aField), equalTo(false));
-    }
-
-
-    @Test
-    public void testGenerateToString() {
-        plugin.generateToStringMethod(aModel,aClass);
-        final JMethod generatedMethod = aClass.getMethod("toString",new JType[0]);
-        assertThat(generatedMethod, not(nullValue()));
-        assertThat(generatedMethod.type().fullName(), equalTo(String.class.getName()));
-    }
+//    @Test
+//    public void testGenerateToString() {
+//        plugin.generateToStringMethod(aModel,aClass);
+//        final JMethod generatedMethod = aClass.getMethod("toString",new JType[0]);
+//        assertThat(generatedMethod, not(nullValue()));
+//        assertThat(generatedMethod.type().fullName(), equalTo(String.class.getName()));
+//    }
 
 
 }

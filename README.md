@@ -57,7 +57,7 @@ In contract first scenarios webservice clients models are often generated with j
                             <wsdlFile>${basedir}/src/test/resources/test.wsdl</wsdlFile>
                         </wsdlFiles>
                         <args>
-                            <arg>-B-Xguava</arg>
+                            <arg>-B-Xlombok</arg>
                         </args>
                     </configuration>
                 </execution>
@@ -100,7 +100,7 @@ In contract first scenarios webservice clients models are often generated with j
 
                             <wsdlOption>
                                 <extraargs>
-                                    <extraarg>-xjc-Xguava</extraarg>
+                                    <extraarg>-xjc-Xlombok</extraarg>
                                 </extraargs>
                                 <wsdl>${basedir}/src/test/resources/test.wsdl</wsdl>
                             </wsdlOption>
@@ -153,7 +153,7 @@ In contract first scenarios webservice clients models are often generated with j
                 </dependency>
             </dependencies>
             <configuration>
-                <arguments>-Xguava</arguments>
+                <arguments>-Xlombok</arguments>
             </configuration>
             <executions>
                 <execution>
