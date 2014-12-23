@@ -1,17 +1,19 @@
-xjc-guava-plugin
+xjc-lombok-plugin
 ================
 
 [![Build Status](https://secure.travis-ci.org/danielwegener/xjc-guava-plugin.png)](https://travis-ci.org/danielwegener/xjc-guava-plugin)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.danielwegener.xjc/xjc-guava-plugin/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.danielwegener.xjc/xjc-guava-plugin)
 
-*Fell in love with Guavas Objects.toStringHelper(), .hashCode() and .equals()? Tired of writing StringBuilders for JAX-WS wsgen generated Beans? This XJC Compiler plugin comes to the rescue and creates yummie standards methods for your JAX-B/WS Beans - with a taste of Guava.*
+*Fell in love with lombok @ToString, @EqualsAndHashCode? Tired of writing StringBuilders for JAX-WS wsgen generated Beans? This XJC Compiler plugin comes to the rescue and creates yummie standards methods for your JAX-B/WS Beans - with a taste of Lombok.*
 
 Profit!
 
 Example
 ---------------------
-This plugin generates guava standard methods for toString, hashCode and equals:
+This plugin generates lombok standard annotations for toString, hashCode and equals:
 ```java
+@ToString
+@EqualsAndHashCode
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "thunderbolt", propOrder = {
     "intensity"
@@ -28,30 +30,6 @@ public class Thunderbolt {
         this.intensity = value;
     }
 
-    @Override
-    public String toString() {
-        return Objects.toStringHelper(this).add("intensity", intensity).toString();
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hashCode(intensity);
-    }
-
-    @Override
-    public boolean equals(Object other) {
-        if (this == other) {
-            return true;
-        }
-        if (other == null) {
-            return false;
-        }
-        final Thunderbolt o = ((Thunderbolt) other);
-        if (o == null) {
-            return false;
-        }
-        return Objects.equal(intensity, o.intensity);
-    }
 }
 ```
 
@@ -87,7 +65,7 @@ In contract first scenarios webservice clients models are often generated with j
             <dependencies>
                 <dependency>
                     <groupId>com.github.danielwegener.xjc</groupId>
-                    <artifactId>xjc-guava-plugin</artifactId>
+                    <artifactId>xjc-lombok-plugin</artifactId>
                     <version>0.3.1</version>
                 </dependency>
             </dependencies>
@@ -96,9 +74,10 @@ In contract first scenarios webservice clients models are often generated with j
 </build>
 <dependencies>
     <dependency>
-        <groupId>com.google.guava</groupId>
-        <artifactId>guava</artifactId>
-        <version>${guava.version}</version>
+        <groupId>org.projectlombok</groupId>
+		<artifactId>lombok</artifactId>
+		<version>1.14.8</version>
+		<scope>provided</scope>
     </dependency>
 </dependencies>
 ```
@@ -135,7 +114,7 @@ In contract first scenarios webservice clients models are often generated with j
             <dependencies>
                 <dependency>
                     <groupId>com.github.danielwegener.xjc</groupId>
-                    <artifactId>xjc-guava-plugin</artifactId>
+                    <artifactId>xjc-lombok-plugin</artifactId>
                     <version>0.3.1</version>
                 </dependency>
             </dependencies>
@@ -144,9 +123,10 @@ In contract first scenarios webservice clients models are often generated with j
 </build>
 <dependencies>
     <dependency>
-        <groupId>com.google.guava</groupId>
-        <artifactId>guava</artifactId>
-        <version>${guava.version}</version>
+        <groupId>org.projectlombok</groupId>
+		<artifactId>lombok</artifactId>
+		<version>1.14.8</version>
+		<scope>provided</scope>
     </dependency>
 </dependencies>
 
@@ -163,7 +143,7 @@ In contract first scenarios webservice clients models are often generated with j
             <dependencies>
                 <dependency>
                     <groupId>com.github.danielwegener.xjc</groupId>
-                    <artifactId>xjc-guava-plugin</artifactId>
+                    <artifactId>xjc-lombok-plugin</artifactId>
                     <version>0.3.1</version>
                 </dependency>
                 <dependency>
@@ -187,9 +167,10 @@ In contract first scenarios webservice clients models are often generated with j
     </plugins>
     <dependencies>
         <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
-            <version>${guava.version}</version>
+            <groupId>org.projectlombok</groupId>
+		    <artifactId>lombok</artifactId>
+		    <version>1.14.8</version>
+		    <scope>provided</scope>
         </dependency>
     </dependencies>
 </build>
