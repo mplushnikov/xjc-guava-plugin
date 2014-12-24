@@ -1,14 +1,8 @@
-package com.github.danielwegener.xjcguava;
+package de.plushnikov.xjc.lombok;
 
 import com.sun.codemodel.*;
-import org.junit.Test;
-
-import java.util.Arrays;
-import java.util.Collection;
 
 import static org.junit.Assert.assertThat;
-import static org.hamcrest.Matchers.*;
-import static org.hamcrest.Matchers.equalTo;
 
 public class XjcLombokPluginTest {
 

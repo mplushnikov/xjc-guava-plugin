@@ -57,7 +57,6 @@
         </developer>
     </developers>
 
-
     <dependencies>
         <dependency>
             <groupId>com.sun.xml.bind</groupId>
@@ -162,7 +161,6 @@
                         </dependencies>
                     </plugin>
                 </plugins>
-
             </build>
         </profile>
     </profiles>

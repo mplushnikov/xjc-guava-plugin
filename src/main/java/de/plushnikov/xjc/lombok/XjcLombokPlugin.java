@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.github.danielwegener.xjcguava;
+package de.plushnikov.xjc.lombok;
 
 import com.sun.codemodel.JAnnotationUse;
 import com.sun.codemodel.JCodeModel;
@@ -37,7 +37,6 @@ import java.io.IOException;
 public class XjcLombokPlugin extends Plugin {
 
     public static final String OPTION_NAME = "Xlombok";
-    public static final String SKIP_TOSTRING_PARAM = "-" + OPTION_NAME + ":skipToString";
 
     @Override
     public String getOptionName() {
@@ -51,23 +50,13 @@ public class XjcLombokPlugin extends Plugin {
 
     @Override
     public int parseArgument(Options opt, String[] args, int i) throws BadCommandLineException, IOException {
-
-        final String arg = args[i].trim();
-        if (SKIP_TOSTRING_PARAM.equals(arg)) {
-            skipToString = true;
-            return 1;
-        }
         return 0;
     }
-
-    private boolean skipToString = false;
 
     @Override
     public boolean run(final Outline outline, final Options options, final ErrorHandler errorHandler) {
         // For each defined class
-        final JCodeModel model = outline.getCodeModel();
         for (final ClassOutline classOutline : outline.getClasses()) {
-
             final JDefinedClass implClass = classOutline.implClass;
 
             final JAnnotationUse toStringAnnotation = implClass.annotate(ToString.class);
