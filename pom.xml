@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>de.plushnikov.xjc</groupId>
     <artifactId>xjc-lombok-plugin</artifactId>
-    <version>1.0</version>
+    <version>1.1-SNAPSHOT</version>
     <parent>
         <groupId>org.sonatype.oss</groupId>
         <artifactId>oss-parent</artifactId>
@@ -45,7 +45,7 @@
         <connection>scm:git:git@github.com:mplushnikov/xjc-lombok-plugin.git</connection>
         <developerConnection>scm:git:git@github.com:mplushnikov/xjc-lombok-plugin.git</developerConnection>
         <url>git@github.com:mplushnikov/xjc-lombok-plugin.git</url>
-      <tag>xjc-lombok-plugin-1.0</tag>
+      <tag>HEAD</tag>
   </scm>
 
     <developers>
