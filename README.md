@@ -4,7 +4,9 @@ xjc-lombok-plugin
 [![Build Status](https://travis-ci.org/mplushnikov/xjc-lombok-plugin.svg)](https://travis-ci.org/mplushnikov/xjc-lombok-plugin.svg)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/de.plushnikov.xjc/xjc-lombok-plugin/badge.svg)](https://maven-badges.herokuapp.com/maven-central/de.plushnikov.xjc/xjc-lombok-plugin)
 
-*Fell in love with lombok @ToString, @EqualsAndHashCode? Tired of writing StringBuilders for JAX-WS wsgen generated Beans? This XJC Compiler plugin comes to the rescue and creates yummie standards methods for your JAX-B/WS Beans - with a taste of Lombok.*
+*Fell in love with lombok [@ToString](http://projectlombok.org/features/ToString.html),
+[@EqualsAndHashCode](http://projectlombok.org/features/EqualsAndHashCode.html)?
+Tired of writing StringBuilders for JAX-WS wsgen generated Beans? This XJC Compiler plugin comes to the rescue and creates yummie standards methods for your JAX-B/WS Beans - with a taste of [Lombok](http://code.google.com/p/projectlombok/).*
 
 Profit!
 
