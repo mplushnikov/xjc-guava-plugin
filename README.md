@@ -6,7 +6,7 @@ xjc-lombok-plugin
 
 *Fell in love with lombok [@ToString](http://projectlombok.org/features/ToString.html),
 [@EqualsAndHashCode](http://projectlombok.org/features/EqualsAndHashCode.html)?
-Tired of writing StringBuilders for JAX-WS wsgen generated Beans? This XJC Compiler plugin comes to the rescue and creates yummie standards methods for your JAX-B/WS Beans - with a taste of [Lombok](http://code.google.com/p/projectlombok/).*
+Tired of writing StringBuilders for JAX-WS wsgen generated Beans? This XJC Compiler plugin comes to the rescue and creates yummie standards methods for your JAX-B/WS Beans - with a taste of [Lombok](http://projectlombok.org/).*
 
 Profit!
 
