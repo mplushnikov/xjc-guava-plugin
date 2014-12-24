@@ -68,7 +68,7 @@ In contract first scenarios webservice clients models are often generated with j
                 <dependency>
                     <groupId>de.plushnikov.xjc</groupId>
                     <artifactId>xjc-lombok-plugin</artifactId>
-                    <version>0.3.1</version>
+                    <version>1.0</version>
                 </dependency>
             </dependencies>
         </plugin>
@@ -117,7 +117,7 @@ In contract first scenarios webservice clients models are often generated with j
                 <dependency>
                     <groupId>de.plushnikov.xjc</groupId>
                     <artifactId>xjc-lombok-plugin</artifactId>
-                    <version>0.3.1</version>
+                    <version>1.0</version>
                 </dependency>
             </dependencies>
         </plugin>
@@ -146,7 +146,7 @@ In contract first scenarios webservice clients models are often generated with j
                 <dependency>
                     <groupId>de.plushnikov.xjc</groupId>
                     <artifactId>xjc-lombok-plugin</artifactId>
-                    <version>0.3.1</version>
+                    <version>1.0</version>
                 </dependency>
                 <dependency>
                     <groupId>xerces</groupId>
