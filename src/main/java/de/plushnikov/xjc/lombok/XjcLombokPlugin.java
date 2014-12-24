@@ -16,7 +16,6 @@
 package de.plushnikov.xjc.lombok;
 
 import com.sun.codemodel.JAnnotationUse;
-import com.sun.codemodel.JCodeModel;
 import com.sun.codemodel.JDefinedClass;
 import com.sun.tools.xjc.BadCommandLineException;
 import com.sun.tools.xjc.Options;
@@ -59,13 +58,17 @@ public class XjcLombokPlugin extends Plugin {
         for (final ClassOutline classOutline : outline.getClasses()) {
             final JDefinedClass implClass = classOutline.implClass;
 
-            final JAnnotationUse toStringAnnotation = implClass.annotate(ToString.class);
-            final JAnnotationUse equalsAndHashCodeAnnotation = implClass.annotate(EqualsAndHashCode.class);
-            if (implClass._extends() instanceof JDefinedClass) {
-                toStringAnnotation.param("callSuper", true);
-                equalsAndHashCodeAnnotation.param("callSuper", true);
-            }
+            generateLombokAnnotations(implClass);
         }
         return true;
+    }
+
+    protected void generateLombokAnnotations(JDefinedClass implClass) {
+        final JAnnotationUse toStringAnnotation = implClass.annotate(ToString.class);
+        final JAnnotationUse equalsAndHashCodeAnnotation = implClass.annotate(EqualsAndHashCode.class);
+        if (implClass._extends() instanceof JDefinedClass) {
+            toStringAnnotation.param("callSuper", true);
+            equalsAndHashCodeAnnotation.param("callSuper", true);
+        }
     }
 }

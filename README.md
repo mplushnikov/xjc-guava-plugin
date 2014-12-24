@@ -64,7 +64,7 @@ In contract first scenarios webservice clients models are often generated with j
             </executions>
             <dependencies>
                 <dependency>
-                    <groupId>com.github.danielwegener.xjc</groupId>
+                    <groupId>de.plushnikov.xjc</groupId>
                     <artifactId>xjc-lombok-plugin</artifactId>
                     <version>0.3.1</version>
                 </dependency>
@@ -113,7 +113,7 @@ In contract first scenarios webservice clients models are often generated with j
             </executions>
             <dependencies>
                 <dependency>
-                    <groupId>com.github.danielwegener.xjc</groupId>
+                    <groupId>de.plushnikov.xjc</groupId>
                     <artifactId>xjc-lombok-plugin</artifactId>
                     <version>0.3.1</version>
                 </dependency>
@@ -142,7 +142,7 @@ In contract first scenarios webservice clients models are often generated with j
             <version>1.6</version>
             <dependencies>
                 <dependency>
-                    <groupId>com.github.danielwegener.xjc</groupId>
+                    <groupId>de.plushnikov.xjc</groupId>
                     <artifactId>xjc-lombok-plugin</artifactId>
                     <version>0.3.1</version>
                 </dependency>
