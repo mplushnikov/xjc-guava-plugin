@@ -1,0 +1,18 @@
+version: 2
+updates:
+- package-ecosystem: maven
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "04:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: org.projectlombok:lombok
+    versions:
+    - 1.18.18
+  - dependency-name: org.apache.cxf:cxf-codegen-plugin
+    versions:
+    - 3.4.2
+  - dependency-name: com.sun.xml.bind:jaxb-xjc
+    versions:
+    - 3.0.0
